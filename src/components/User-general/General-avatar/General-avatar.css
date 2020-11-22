@@ -1,0 +1,29 @@
+
+.avatar-wrap {
+  grid-area: ua;
+  width: 200px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #D3D9DE;
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+.avatar__img {
+  max-width: 180px;
+  max-height: 270px;
+  border-radius: 4px;
+
+}
+
+.avatar__button {
+  width: 180px;
+  border: none;
+  border-radius: 4px;
+
+  background-color: #E5EBF1;
+  color: #486F96;
+  padding: 5px;
+  /*box-sizing: border-box;*/
+}

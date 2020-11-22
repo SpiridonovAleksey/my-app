@@ -1,0 +1,13 @@
+
+.user-info {
+  grid-area: ui;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #D3D9DE;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.user-info__name {
+  border-bottom: 1px solid #D3D9DE;
+}

@@ -1,0 +1,9 @@
+
+.user-general-wrap {
+  display: grid;
+  grid-gap: 10px;
+  width: 80%;
+  grid-template-columns: 200px auto;
+  grid-template-areas:
+    "ua ui";
+}

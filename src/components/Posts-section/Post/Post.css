@@ -2,13 +2,15 @@
 .post {
   /*width: 80%;*/
   /*box-sizing: border-box;*/
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 10px;
   display: grid;
+  box-sizing: border-box;
   grid-template-areas:
     "a c c"
     "a 0 l";
-  border-radius: 3px;
+  border: 1px solid #D3D9DE;
+  border-radius: 4px;
   background-color: #fff;
 }
 
@@ -29,4 +31,8 @@
 
 .post__like {
   grid-area: l;
+  border: none;
+  background-color: #E5EBF1;
+  color: #486F96;
+  padding: 5px 20px;
 }
