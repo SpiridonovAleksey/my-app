@@ -1,0 +1,32 @@
+
+.post {
+  /*width: 80%;*/
+  /*box-sizing: border-box;*/
+  margin: 10px 0;
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    "a c c"
+    "a 0 l";
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.post__avatar {
+  grid-area: a;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.post__content {
+  grid-area: c;
+  margin: 0 auto;
+  /*padding: 0 0 0 40px;*/
+  width: 80%;
+
+}
+
+.post__like {
+  grid-area: l;
+}

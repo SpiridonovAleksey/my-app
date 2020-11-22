@@ -1,0 +1,10 @@
+.main-content {
+  grid-area: c;
+  /*background-color: lightgreen;*/
+  border-radius: 10px;
+  /*border: 1px solid black;*/
+  display: grid;
+  /*align-items: center;*/
+
+}
+

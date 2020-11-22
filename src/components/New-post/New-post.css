@@ -1,0 +1,47 @@
+
+.new-post {
+  width: 80%;
+  /*margin: 0 auto;*/
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "a . t"
+    "m m m"
+    ". . b";
+  margin-top: 50px;
+  /*border-top: 1px solid lightslategrey;*/
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.new-post__avatar {
+  grid-area: a;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.new-post__title {
+  grid-area: t;
+  margin: 0;
+  text-align: right;
+}
+
+.new-post__message {
+  grid-area: m;
+  min-height: 70px;
+  /*width: 80%;*/
+  /*margin: 0 auto;*/
+  /*background-color: lightslategrey;*/
+  border: 1px solid lightslategrey;
+  border-radius: 3px;
+
+}
+
+.new-post__button {
+  grid-area: b;
+  width: 50px;
+  margin: 0 0 0 auto;
+}
