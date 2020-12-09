@@ -1,5 +1,5 @@
 import React from "react";
-import Post from "../Post/Post.jsx";
+import Post from "./Post/Post.jsx";
 import "./Posts-wrap.css";
 
 const PostsWrap = () => {

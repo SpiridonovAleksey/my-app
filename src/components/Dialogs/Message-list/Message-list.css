@@ -1,0 +1,40 @@
+
+.message-list {
+  list-style: none;
+  margin: 0 0 0 70px;
+  padding: 0;
+  box-sizing: border-box;
+  width: 400px;
+}
+
+.message-list__item {
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #D3D9DE;
+  border-radius: 4px;
+  position: relative;
+}
+
+.message-list__item:first-of-type {
+  margin-top: 0;
+}
+
+.message-list__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /*margin-left: -50px;*/
+  position: absolute;
+  top: 0;
+  left: -50px;
+}
+
+.message-list__avatar--my {
+  left: 105%;
+}
+
+.message-list__text {
+  margin: 0;
+  padding: 0;
+}
