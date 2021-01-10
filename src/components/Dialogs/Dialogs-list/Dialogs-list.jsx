@@ -2,22 +2,25 @@ import React from "react";
 import './Dialogs-list.css';
 import {NavLink} from "react-router-dom";
 
-const DialogListItem = (props) => {
-  return (
+const DialogList = (props) => {
+
+  let dialogsData = [
+    {id: 1, name: 'igor'},
+    {id: 2, name: 'ira'},
+    {id: 3, name: 'sveta'},
+    {id: 4, name: 'miha'},
+    {id: 5, name: 'marina'}
+  ];
+
+  let dialogsItem = dialogsData.map(item =>
     <li className='dialog-list__item'>
-      <NavLink className='dialog-list__link' to={"/dialogs/" + props.id}>{props.name}</NavLink>
+      <NavLink className='dialog-list__link' to={"/dialogs/" + item.id}>{item.name}</NavLink>
     </li>
   );
-};
 
-const DialogList = (props) => {
   return (
   <ul className='dialog-list'>
-    <DialogListItem name='igor' id='1'/>
-    <DialogListItem name='ira' id='2'/>
-    <DialogListItem name='sveta' id='3'/>
-    <DialogListItem name='miha' id='4'/>
-    <DialogListItem name='marina' id='5'/>
+    {dialogsItem}
   </ul>
   );
 };
