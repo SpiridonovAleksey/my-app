@@ -9,16 +9,14 @@ import Music from "../Music/Music.jsx";
 import News from "../News/News";
 import {Route} from "react-router-dom";
 
+const MainContent = (props) => {
 
-const MainContent = () => {
   return (
     <div className='main-content'>
-      <Route path='/profile' component={Profile}/>
-      <Route path='/dialogs' component={Dialogs}/>
-      <Route path='/music' component={Music}/>
-      <Route path='/news' component={News}/>
-
-
+      <Route path='/profile' render={() => <Profile/>}/>
+      <Route path='/dialogs' render={() => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
+      <Route path='/music' render={() => <Music/>}/>
+      <Route path='/news' render={() => <News/>}/>
     </div>
   )
 };

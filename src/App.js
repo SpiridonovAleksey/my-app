@@ -6,14 +6,16 @@ import Header from "./components/header/Header.jsx";
 import Navigation from "./components/nav/nav.jsx";
 import MainContent from "./components/main-content/main-content.jsx";
 import {BrowserRouter} from "react-router-dom";
+import Dialogs from "./components/Dialogs/Dialogs";
 
-const App = () => {
+const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header/>
         <Navigation/>
-        <MainContent/>
+        <MainContent dialogsData={props.dialogsData} messagesData={props.messagesData}/>
         <Footer/>
 
       </div>
