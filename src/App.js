@@ -15,7 +15,7 @@ const App = (props) => {
       <div className='app-wrapper'>
         <Header/>
         <Navigation/>
-        <MainContent dialogsData={props.dialogsData} messagesData={props.messagesData}/>
+        <MainContent dialogsState={props.state.dialogsState} postsData={props.state.postsData}/>
         <Footer/>
 
       </div>

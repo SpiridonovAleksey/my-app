@@ -13,8 +13,8 @@ const MainContent = (props) => {
 
   return (
     <div className='main-content'>
-      <Route path='/profile' render={() => <Profile/>}/>
-      <Route path='/dialogs' render={() => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>}/>
+      <Route path='/profile' render={() => <Profile postsData={props.postsData}/>}/>
+      <Route path='/dialogs' render={() => <Dialogs dialogsState={props.dialogsState}/>}/>
       <Route path='/music' render={() => <Music/>}/>
       <Route path='/news' render={() => <News/>}/>
     </div>

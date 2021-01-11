@@ -1,19 +1,21 @@
 import React from "react";
-import Post from "./Post/Post.jsx";
 import "./Posts-wrap.css";
 
-const PostsWrap = () => {
+const PostsWrap = (props) => {
+
+  let postsItem = props.postsData.map(item =>
+    <div className="post">
+      <img className="post__avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfBJb0V9mwKFAoznIFdeWISIB_JR_XzIMYwA&usqp=CAU"
+           alt=""/>
+      <p className="post__content">{item.text}</p>
+      <button className="post__like">Like{item.count}</button>
+    </div>
+  );
+
   return (
     <section className="posts-wrap">
       <h2 className="posts-wrap__title">my publications</h2>
-      <Post message="Добро пожаловать на просмотр 5 выпуска шоу The Grand Tour!
-             И на этот раз в нём будет все, что только может пожелать автолюбитель – торговый центр,
-             овцы, взрывы и пустыни. Но все это мы увидим чуть позже, а начнем с более близких
-             к автомобилям игрушек." count="4"/>
-      <Post message="The Grand Tour 2 сезон 5 серия - По морям, по волнам и по фермерским полям на русском языке!
-       перевод BMIRussian!" count="3"/>
-      <Post message="Джеймс Мэй будут вести шоу из Котсуолда постоянно, однако большие путешествия
-       останутся неотъемлемой частью каждого выпуска!" count="10"/>
+      {postsItem}
     </section>
   )
 };

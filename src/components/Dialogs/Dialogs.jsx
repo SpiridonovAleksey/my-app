@@ -7,8 +7,8 @@ const Dialogs = (props) => {
 
   return (
     <div className='dialogs'>
-      <DialogList dialogsData={props.dialogsData}/>
-      <MessageList messagesData={props.messagesData}/>
+      <DialogList dialogsData={props.dialogsState.dialogsData}/>
+      <MessageList messagesData={props.dialogsState.messagesData}/>
     </div>
   );
 };
