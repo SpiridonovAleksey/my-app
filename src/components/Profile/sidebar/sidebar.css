@@ -1,0 +1,12 @@
+
+.sidebar {
+  display: grid;
+  box-sizing: border-box;
+  grid-area: side;
+  width: 200px;
+
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+
+}

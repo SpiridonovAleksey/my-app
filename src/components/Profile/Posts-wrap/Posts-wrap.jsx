@@ -14,7 +14,7 @@ const PostsWrap = (props) => {
 
   return (
     <section className="posts-wrap">
-      <h2 className="posts-wrap__title">my publications</h2>
+      <h2 className="posts-wrap__title visually-hidden">my publications</h2>
       {postsItem}
     </section>
   )

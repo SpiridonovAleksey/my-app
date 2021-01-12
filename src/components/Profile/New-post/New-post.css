@@ -1,14 +1,14 @@
 
 .new-post {
-  width: 80%;
-  /*margin: 0 auto;*/
+  grid-area: new;
+  width: 100%;
   display: grid;
   grid-gap: 10px;
   grid-template-areas:
     "a . t"
     "m m m"
     ". . b";
-  margin-top: 50px;
+  margin-top: 5px;
   /*border-top: 1px solid lightslategrey;*/
   padding: 10px;
   box-sizing: border-box;

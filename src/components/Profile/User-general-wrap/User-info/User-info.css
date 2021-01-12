@@ -1,5 +1,6 @@
 
 .user-info {
+  width: 100%;
   grid-area: ui;
   box-sizing: border-box;
   background-color: #fff;

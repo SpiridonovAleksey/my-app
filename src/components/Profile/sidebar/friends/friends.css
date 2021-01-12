@@ -1,0 +1,36 @@
+
+.friends {
+  /*width: 100%;*/
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #D3D9DE;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.friends-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friends-list__item {
+  width: 50px;
+  text-align: center;
+  margin: 4px 4.4px;
+  padding: 0;
+}
+
+.friends-list__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.friends-list__name {
+  color: #486F96;
+  font-size: 14px;
+}

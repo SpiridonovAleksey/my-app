@@ -15,9 +15,10 @@ const App = (props) => {
       <div className='app-wrapper'>
         <Header/>
         <Navigation/>
-        <MainContent dialogsState={props.state.dialogsState} postsData={props.state.postsData}/>
+        <MainContent dialogsState={props.state.dialogsState}
+                     postsData={props.state.postsData}
+                     friendsData={props.state.friendsData}/>
         <Footer/>
-
       </div>
     </BrowserRouter>
   );
