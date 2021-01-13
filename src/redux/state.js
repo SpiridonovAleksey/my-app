@@ -11,13 +11,13 @@ let state = {
 
   postsData: [
     {text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
-    count: 32},
+    count: 11},
     {text: 'sdfsdfdsfsdf',
     count: 32},
     {text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
     count: 32},
     {text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
-    count: 32}
+    count: 44}
   ],
 
   dialogsState: {
