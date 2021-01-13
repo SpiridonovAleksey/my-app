@@ -14,7 +14,7 @@ const Friends = (props) => {
 
   return (
     <div className="friends">
-      <h3>Друзья</h3>
+      <h3 className="friends__title">Друзья</h3>
       <ul className='friends-list'>
         {friendsItem}
       </ul>

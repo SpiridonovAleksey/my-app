@@ -1,7 +1,7 @@
 
 .message-list {
   list-style: none;
-  margin: 0 0 0 70px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   width: 400px;
@@ -31,6 +31,12 @@
 }
 
 .message-list__avatar--my {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /*margin-left: -50px;*/
+  position: absolute;
+  top: 0;
   left: 105%;
 }
 

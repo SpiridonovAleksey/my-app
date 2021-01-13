@@ -1,10 +1,10 @@
 
 .sidebar {
-  display: grid;
+  /*display: grid;*/
   box-sizing: border-box;
   grid-area: side;
   width: 200px;
-
+  background-color: transparent;
   margin-top: 5px;
   margin-bottom: 15px;
 
