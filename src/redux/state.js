@@ -61,4 +61,16 @@ export let addNewPost = (text) => {
   renderEntireTree(state);
 }
 
+export let addNewMessage = (text) => {
+
+  let newMessage = {
+    class: 'message-list__avatar--my',
+    text: text,
+    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
+  };
+
+  state.dialogsState.messagesData.push(newMessage);
+  renderEntireTree(state);
+};
+
 export default state;

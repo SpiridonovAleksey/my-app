@@ -7,7 +7,8 @@ const NewMessage = (props) => {
 
   let sendMessage = () => {
     let text = newMessageText.current.value;
-    alert(text);
+    props.addNewMessage(text);
+    newMessageText.current.value = '';
   };
 
   return (

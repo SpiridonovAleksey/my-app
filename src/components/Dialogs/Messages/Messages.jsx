@@ -8,7 +8,7 @@ const Messages = (props) => {
   return (
     <div className='messages'>
       <MessageList messagesData={props.messagesData}/>
-      <NewMessage/>
+      <NewMessage addNewMessage={props.addNewMessage}/>
     </div>
   );
 };
