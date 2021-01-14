@@ -10,7 +10,7 @@ const Profile = (props) => {
     <section className='profile'>
       <UserGeneralWrap/>
       <Sidebar friendsData={props.friendsData}/>
-      <NewPost/>
+      <NewPost addNewPost={props.addNewPost}/>
       <PostsWrap postsData={props.postsData}/>
     </section>
   );

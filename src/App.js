@@ -8,6 +8,8 @@ import MainContent from "./components/main-content/main-content.jsx";
 import {BrowserRouter} from "react-router-dom";
 import Dialogs from "./components/Dialogs/Dialogs";
 
+
+
 const App = (props) => {
 
   return (
@@ -17,7 +19,8 @@ const App = (props) => {
         <Navigation/>
         <MainContent dialogsState={props.state.dialogsState}
                      postsData={props.state.postsData}
-                     friendsData={props.state.friendsData}/>
+                     friendsData={props.state.friendsData}
+                     addNewPost={props.addNewPost}/>
         <Footer/>
       </div>
     </BrowserRouter>

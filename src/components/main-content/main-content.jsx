@@ -13,7 +13,9 @@ const MainContent = (props) => {
 
   return (
     <div className='main-content'>
-      <Route path='/profile' render={() => <Profile postsData={props.postsData} friendsData={props.friendsData}/>}/>
+      <Route path='/profile' render={() => <Profile postsData={props.postsData}
+                                                    friendsData={props.friendsData}
+                                                    addNewPost={props.addNewPost}/>}/>
       <Route path='/dialogs' render={() => <Dialogs dialogsState={props.dialogsState}/>}/>
       <Route path='/music' render={() => <Music/>}/>
       <Route path='/news' render={() => <News/>}/>

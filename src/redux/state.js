@@ -1,3 +1,4 @@
+import {renderEntireTree} from "../render";
 
 let state = {
 
@@ -48,5 +49,16 @@ let state = {
     ]
   }
 };
+
+export let addNewPost = (text) => {
+
+  let newPost = {
+    text: text,
+    count: 99
+  };
+
+  state.postsData.push(newPost);
+  renderEntireTree(state);
+}
 
 export default state;

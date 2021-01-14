@@ -1,13 +1,15 @@
 import React from "react";
 import "./New-post.css"
 
-const NewPost = () => {
+const NewPost = (props) => {
 
   let newPostText = React.createRef();
 
   let addPost = () => {
-    let text = newPostText.current.value;
-    alert(text);
+
+    let newText = newPostText.current.value;
+    props.addNewPost(newText);
+    newPostText.current.value = '';
   };
 
   return (
