@@ -7,7 +7,6 @@ const NewMessage = (props) => {
 
   let sendMessage = () => {
     props.addNewMessage();
-    props.updateNewMessageText('');
   };
 
   let onMessageChange = () => {

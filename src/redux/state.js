@@ -46,7 +46,7 @@ let state = {
           '          материал содержит обзор всей темы с опорными',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'}
     ],
-    newMessageText: 'zalupa'
+    newMessageText: 'wwwww'
   }
 };
 
@@ -71,6 +71,7 @@ export let addNewMessage = () => {
   };
 
   state.dialogsState.messagesData.push(newMessage);
+  text: state.dialogsState.newMessageText = '';
   renderEntireTree(state);
 };
 
