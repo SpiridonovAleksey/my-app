@@ -29,7 +29,6 @@ let state = {
       {id: 4, name: 'miha'},
       {id: 5, name: 'marina'}
     ],
-
     messagesData: [
       {class: 'message-list__avatar--my',
       text: 'hi',
@@ -46,12 +45,12 @@ let state = {
       text: 'Чтобы вам было удобно,\n' +
           '          материал содержит обзор всей темы с опорными',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'}
-    ]
+    ],
+    newMessageText: 'zalupa'
   }
 };
 
 export let addNewPost = (text) => {
-
   let newPost = {
     text: text,
     count: 99
@@ -61,15 +60,22 @@ export let addNewPost = (text) => {
   renderEntireTree(state);
 }
 
-export let addNewMessage = (text) => {
+window.state = state;
+
+export let addNewMessage = () => {
 
   let newMessage = {
     class: 'message-list__avatar--my',
-    text: text,
+    text: state.dialogsState.newMessageText,
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
   };
 
   state.dialogsState.messagesData.push(newMessage);
+  renderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+  state.dialogsState.newMessageText = newText;
   renderEntireTree(state);
 };
 

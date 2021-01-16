@@ -17,7 +17,8 @@ const MainContent = (props) => {
                                                     friendsData={props.friendsData}
                                                     addNewPost={props.addNewPost}/>}/>
       <Route path='/dialogs' render={() => <Dialogs dialogsState={props.dialogsState}
-                                                    addNewMessage={props.addNewMessage}/>}/>
+                                                    addNewMessage={props.addNewMessage}
+                                                    updateNewMessageText={props.updateNewMessageText}/>}/>
       <Route path='/music' render={() => <Music/>}/>
       <Route path='/news' render={() => <News/>}/>
     </div>

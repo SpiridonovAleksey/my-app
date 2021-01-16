@@ -18,6 +18,7 @@ const App = (props) => {
                      friendsData={props.state.friendsData}
                      addNewPost={props.addNewPost}
                      addNewMessage={props.addNewMessage}
+                     updateNewMessageText={props.updateNewMessageText}
         />
         <Footer/>
       </div>
