@@ -1,4 +1,6 @@
-import {renderEntireTree} from "../render";
+let renderEntireTree = () => {
+  console.log('State change');
+};
 
 let state = {
 
@@ -20,7 +22,7 @@ let state = {
       {text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
         count: 44}
     ],
-    newPostText: 'some text'
+    newPostText: ''
   },
 
   dialogsState: {
@@ -48,7 +50,7 @@ let state = {
           '          материал содержит обзор всей темы с опорными',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'}
     ],
-    newMessageText: 'wwwww'
+    newMessageText: ''
   }
 };
 
@@ -70,7 +72,7 @@ export let updateNewPostText = (newValue) => {
 
 window.state = state;
 
-export let addNewMessage = () => {
+export const addNewMessage = () => {
   let newMessage = {
     class: 'message-list__avatar--my',
     text: state.dialogsState.newMessageText,
@@ -82,11 +84,13 @@ export let addNewMessage = () => {
   renderEntireTree(state);
 };
 
-export let updateNewMessageText = (newText) => {
+export const updateNewMessageText = (newText) => {
   state.dialogsState.newMessageText = newText;
   renderEntireTree(state);
 };
 
-
+export const subscribe = (observer) => {
+  renderEntireTree = observer;
+}
 
 export default state;
