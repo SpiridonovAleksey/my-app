@@ -2,24 +2,26 @@ import {renderEntireTree} from "../render";
 
 let state = {
 
-  friendsData: [
-    {name: 'boris', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'},
-    {name: 'vadim', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU'},
-    {name: 'alina', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU'},
-    {name: 'lena', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU'},
-    {name: 'tolik', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjV5mgzlLBAls49xJ01gEyH7O-THex1PqKw&usqp=CAU'}
-  ],
-
-  postsData: [
-    {text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
-    count: 11},
-    {text: 'sdfsdfdsfsdf',
-    count: 32},
-    {text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
-    count: 32},
-    {text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
-    count: 44}
-  ],
+  profileState: {
+    friendsData: [
+      {name: 'boris', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'},
+      {name: 'vadim', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU'},
+      {name: 'alina', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU'},
+      {name: 'lena', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU'},
+      {name: 'tolik', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjV5mgzlLBAls49xJ01gEyH7O-THex1PqKw&usqp=CAU'}
+    ],
+    postsData: [
+      {text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
+        count: 11},
+      {text: 'sdfsdfdsfsdf',
+        count: 32},
+      {text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
+        count: 32},
+      {text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
+        count: 44}
+    ],
+    newPostText: 'some text'
+  },
 
   dialogsState: {
     dialogsData: [
@@ -56,14 +58,19 @@ export let addNewPost = (text) => {
     count: 99
   };
 
-  state.postsData.push(newPost);
+  state.profileState.postsData.push(newPost);
+  text: state.profileState.newPostText = '';
+  renderEntireTree(state);
+}
+
+export let updateNewPostText = (newValue) => {
+  state.profileState.newPostText = newValue;
   renderEntireTree(state);
 }
 
 window.state = state;
 
 export let addNewMessage = () => {
-
   let newMessage = {
     class: 'message-list__avatar--my',
     text: state.dialogsState.newMessageText,
@@ -79,5 +86,7 @@ export let updateNewMessageText = (newText) => {
   state.dialogsState.newMessageText = newText;
   renderEntireTree(state);
 };
+
+
 
 export default state;
