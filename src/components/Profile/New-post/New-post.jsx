@@ -8,7 +8,6 @@ const NewPost = (props) => {
   let addPost = () => {
     let newText = someNewPostText.current.value;
     props.addNewPost(newText);
-    someNewPostText.current.value = '';
   };
 
   let onPostChange = () => {

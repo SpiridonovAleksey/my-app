@@ -15,7 +15,7 @@ const MainContent = (props) => {
   return (
     <div className='main-content'>
       <Route path='/profile' render={() => <Profile postsData={props.postsData}
-                                                    updateNewPostText={updateNewPostText}
+                                                    updateNewPostText={props.updateNewPostText}
                                                     newPostText={props.newPostText}
                                                     friendsData={props.friendsData}
                                                     addNewPost={props.addNewPost}/>}/>

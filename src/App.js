@@ -15,7 +15,7 @@ const App = (props) => {
         <Header/>
         <Navigation/>
         <MainContent dialogsState={props.state.dialogsState}
-                     updateNewPostText={updateNewPostText}
+                     updateNewPostText={props.updateNewPostText}
                      newPostText={props.state.profileState.newPostText}
                      postsData={props.state.profileState.postsData}
                      friendsData={props.state.profileState.friendsData}

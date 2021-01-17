@@ -12,7 +12,7 @@ const Profile = (props) => {
       <UserGeneralWrap/>
       <Sidebar friendsData={props.friendsData}/>
       <NewPost addNewPost={props.addNewPost}
-               updateNewPostText={updateNewPostText}
+               updateNewPostText={props.updateNewPostText}
                newPostText={props.newPostText}/>
       <PostsWrap postsData={props.postsData}/>
     </section>
