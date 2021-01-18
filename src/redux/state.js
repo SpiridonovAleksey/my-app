@@ -1,6 +1,5 @@
 let store = {
   _state: {
-
     profileState: {
       friendsData: [
         {name: 'boris', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'},
@@ -51,30 +50,59 @@ let store = {
     }
   },
 
-  getState() {
-    return this._state;
-  },
-
   _callSubscriber() {
     console.log('State change');
   },
 
-  addNewPost(text)  {
+  getState() {
+    return this._state;
+  },
+  subscribe(observer)  {
+    this._callSubscriber = observer;
+  },
 
-    let newPost = {
-        text: text,
+  dispatch(action) {
+    if (action.type === 'ADD_NEW_POST') {
+      let newPost = {
+        text: this._state.profileState.newPostText,
         count: 99
       };
 
-    this._state.profileState.postsData.push(newPost);
-    text: this._state.profileState.newPostText = '';
-    this._callSubscriber(this._state);
+      this._state.profileState.postsData.push(newPost);
+      text: this._state.profileState.newPostText = '';
+      this._callSubscriber(this._state);
+
+    } else if (action.type === 'UPDATE_NEW_POST_TEXT') {
+
+      this._state.profileState.newPostText = action.newValue;
+      this._callSubscriber(this._state);
+
+    };
   },
 
-  updateNewPostText(newValue)  {
-    this._state.profileState.newPostText = newValue;
-    this._callSubscriber(this._state);
-  },
+
+
+
+
+
+
+
+  //
+  // addNewPost()  {
+  //
+  //   let newPost = {
+  //       text: this._state.profileState.newPostText,
+  //       count: 99
+  //     };
+  //
+  //   this._state.profileState.postsData.push(newPost);
+  //   text: this._state.profileState.newPostText = '';
+  //   this._callSubscriber(this._state);
+  // },
+  // updateNewPostText(newValue)  {
+  //   this._state.profileState.newPostText = newValue;
+  //   this._callSubscriber(this._state);
+  // },
 
   addNewMessage()  {
     let newMessage = {
@@ -87,15 +115,11 @@ let store = {
     text: this._state.dialogsState.newMessageText = '';
     this._callSubscriber(this._state);
   },
-
   updateNewMessageText(newText)  {
     this._state.dialogsState.newMessageText = newText;
     this._callSubscriber(this._state);
-  },
-
-  subscribe(observer)  {
-    this._callSubscriber = observer;
   }
+
 };
 
 export default store;

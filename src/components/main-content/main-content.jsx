@@ -8,17 +8,18 @@ import Dialogs from "../Dialogs/Dialogs.jsx";
 import Music from "../Music/Music.jsx";
 import News from "../News/News";
 import {Route} from "react-router-dom";
-import {updateNewPostText} from "../../redux/state";
+import store, {updateNewPostText} from "../../redux/state";
 
 const MainContent = (props) => {
 
   return (
     <div className='main-content'>
       <Route path='/profile' render={() => <Profile postsData={props.postsData}
-                                                    updateNewPostText={props.updateNewPostText}
-                                                    newPostText={props.newPostText}
                                                     friendsData={props.friendsData}
-                                                    addNewPost={props.addNewPost}/>}/>
+                                                    newPostText={props.newPostText}
+                                                    // addNewPost={props.addNewPost}
+                                                    // updateNewPostText={props.updateNewPostText}
+                                                    dispatch={props.dispatch}/>}/>
       <Route path='/dialogs' render={() => <Dialogs dialogsState={props.dialogsState}
                                                     addNewMessage={props.addNewMessage}
                                                     updateNewMessageText={props.updateNewMessageText}/>}/>

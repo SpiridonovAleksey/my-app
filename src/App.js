@@ -5,7 +5,7 @@ import Header from "./components/header/Header.jsx";
 import Navigation from "./components/nav/nav.jsx";
 import MainContent from "./components/main-content/main-content.jsx";
 import {BrowserRouter} from "react-router-dom";
-import {updateNewPostText} from "./redux/state";
+import store, {updateNewPostText} from "./redux/state";
 
 const App = (props) => {
 
@@ -15,13 +15,14 @@ const App = (props) => {
         <Header/>
         <Navigation/>
         <MainContent dialogsState={props.state.dialogsState}
-                     updateNewPostText={props.updateNewPostText}
                      newPostText={props.state.profileState.newPostText}
                      postsData={props.state.profileState.postsData}
                      friendsData={props.state.profileState.friendsData}
-                     addNewPost={props.addNewPost}
+                     // addNewPost={props.addNewPost}
+                     // updateNewPostText={props.updateNewPostText}
                      addNewMessage={props.addNewMessage}
                      updateNewMessageText={props.updateNewMessageText}
+                     dispatch={props.dispatch}
         />
         <Footer/>
       </div>

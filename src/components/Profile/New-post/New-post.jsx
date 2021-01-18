@@ -2,17 +2,15 @@ import React from "react";
 import "./New-post.css"
 
 const NewPost = (props) => {
-
   let someNewPostText = React.createRef();
 
   let addPost = () => {
-    let newText = someNewPostText.current.value;
-    props.addNewPost(newText);
+    props.dispatch({type: 'ADD_NEW_POST'});
   };
 
   let onPostChange = () => {
     let newText = someNewPostText.current.value;
-    props.updateNewPostText(newText);
+    props.dispatch({type: 'UPDATE_NEW_POST_TEXT', newValue: newText});
   };
 
 
