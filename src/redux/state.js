@@ -1,3 +1,7 @@
+
+const ADD_NEW_POST = 'ADD_NEW_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+
 let store = {
   _state: {
     profileState: {
@@ -77,32 +81,8 @@ let store = {
       this._state.profileState.newPostText = action.newValue;
       this._callSubscriber(this._state);
 
-    };
+    }
   },
-
-
-
-
-
-
-
-
-  //
-  // addNewPost()  {
-  //
-  //   let newPost = {
-  //       text: this._state.profileState.newPostText,
-  //       count: 99
-  //     };
-  //
-  //   this._state.profileState.postsData.push(newPost);
-  //   text: this._state.profileState.newPostText = '';
-  //   this._callSubscriber(this._state);
-  // },
-  // updateNewPostText(newValue)  {
-  //   this._state.profileState.newPostText = newValue;
-  //   this._callSubscriber(this._state);
-  // },
 
   addNewMessage()  {
     let newMessage = {
@@ -120,6 +100,15 @@ let store = {
     this._callSubscriber(this._state);
   }
 
+};
+
+export const addPostActionCreator =() => {
+  return {type: ADD_NEW_POST};
+};
+
+export const onPostChangeActionCreator = (newText) => {
+  return {type: UPDATE_NEW_POST_TEXT,
+          newValue: newText};
 };
 
 export default store;
