@@ -11,8 +11,7 @@ const Dialogs = (props) => {
       <DialogList dialogsData={props.dialogsState.dialogsData}/>
       <Messages messagesData={props.dialogsState.messagesData}
                 newMessageText={props.dialogsState.newMessageText}
-                addNewMessage={props.addNewMessage}
-                updateNewMessageText={props.updateNewMessageText}/>
+                dispatch={props.dispatch}/>
     </div>
   );
 };

@@ -5,8 +5,6 @@ import {addPostActionCreator, onPostChangeActionCreator} from "../../../redux/st
 const NewPost = (props) => {
   let someNewPostText = React.createRef();
 
-
-
   let addPost = () => {
     props.dispatch(addPostActionCreator());
   };

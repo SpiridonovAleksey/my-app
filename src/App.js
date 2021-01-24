@@ -18,10 +18,6 @@ const App = (props) => {
                      newPostText={props.state.profileState.newPostText}
                      postsData={props.state.profileState.postsData}
                      friendsData={props.state.profileState.friendsData}
-                     // addNewPost={props.addNewPost}
-                     // updateNewPostText={props.updateNewPostText}
-                     addNewMessage={props.addNewMessage}
-                     updateNewMessageText={props.updateNewMessageText}
                      dispatch={props.dispatch}
         />
         <Footer/>

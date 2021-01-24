@@ -15,10 +15,6 @@ export let renderEntireTree = (state) => {
     <React.StrictMode>
       <App state={state}
            dispatch={store.dispatch.bind(store)}
-           // addNewPost={store.addNewPost.bind(store)}
-           // updateNewPostText={store.updateNewPostText.bind(store)}
-           addNewMessage={store.addNewMessage.bind(store)}
-           updateNewMessageText={store.updateNewMessageText.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById('root')

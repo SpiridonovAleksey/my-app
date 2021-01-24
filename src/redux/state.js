@@ -1,6 +1,9 @@
 
 const ADD_NEW_POST = 'ADD_NEW_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
+
 
 let store = {
   _state: {
@@ -81,33 +84,40 @@ let store = {
       this._state.profileState.newPostText = action.newValue;
       this._callSubscriber(this._state);
 
+    } else if (action.type === 'ADD_NEW_MESSAGE') {
+      let newMessage = {
+        class: 'message-list__avatar--my',
+        text: this._state.dialogsState.newMessageText,
+        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
+      };
+
+      this._state.dialogsState.messagesData.push(newMessage);
+      this._state.dialogsState.newMessageText = '';
+      this._callSubscriber(this._state);
+
+    } else if (action.type === 'UPDATE_NEW_MESSAGE_TEXT') {
+      this._state.dialogsState.newMessageText = action.newValue;
+      this._callSubscriber(this._state);
     }
-  },
-
-  addNewMessage()  {
-    let newMessage = {
-      class: 'message-list__avatar--my',
-      text: this._state.dialogsState.newMessageText,
-      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
-    };
-
-    this._state.dialogsState.messagesData.push(newMessage);
-    text: this._state.dialogsState.newMessageText = '';
-    this._callSubscriber(this._state);
-  },
-  updateNewMessageText(newText)  {
-    this._state.dialogsState.newMessageText = newText;
-    this._callSubscriber(this._state);
   }
 
 };
 
-export const addPostActionCreator =() => {
+export const addPostActionCreator = () => {
   return {type: ADD_NEW_POST};
 };
 
 export const onPostChangeActionCreator = (newText) => {
   return {type: UPDATE_NEW_POST_TEXT,
+          newValue: newText};
+};
+
+export const addMessageActionCreator = () => {
+  return {type: ADD_NEW_MESSAGE};
+};
+
+export const updateNewMessageTextActionCreator = (newText) => {
+  return {type: UPDATE_NEW_MESSAGE_TEXT,
           newValue: newText};
 };
 
