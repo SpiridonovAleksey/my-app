@@ -10,8 +10,8 @@ const NewMessage = (props) => {
   };
 
   let onMessageChange = () => {
-    let text = newMessageText.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(text));
+    let newText = newMessageText.current.value;
+    props.dispatch(updateNewMessageTextActionCreator(newText));
   };
 
   return (
@@ -23,8 +23,8 @@ const NewMessage = (props) => {
                 rows=""
                 placeholder='Введите сообщение'
                 ref={newMessageText}
-                value={props.newMessageText}
-                onChange={onMessageChange}/>
+                onChange={onMessageChange}
+                value={props.newMessageText}/>
       <div className='new-message__control'>
         <button className='new-message__button' onClick={sendMessage}>send</button>
       </div>

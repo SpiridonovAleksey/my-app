@@ -9,6 +9,7 @@ const Messages = (props) => {
     <div className='messages'>
       <MessageList messagesData={props.messagesData}/>
       <NewMessage addNewMessage={props.addNewMessage}
+                  newMessageText={props.newMessageText}
                   dispatch={props.dispatch}/>
     </div>
   );

@@ -76,7 +76,7 @@ let store = {
       };
 
       this._state.profileState.postsData.push(newPost);
-      text: this._state.profileState.newPostText = '';
+      this._state.profileState.newPostText = '';
       this._callSubscriber(this._state);
 
     } else if (action.type === 'UPDATE_NEW_POST_TEXT') {
