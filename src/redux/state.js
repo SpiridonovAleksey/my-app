@@ -1,3 +1,5 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 const ADD_NEW_POST = 'ADD_NEW_POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
@@ -69,36 +71,10 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD_NEW_POST') {
-      let newPost = {
-        text: this._state.profileState.newPostText,
-        count: 99
-      };
+    this._state.profileState = profileReducer(this._state.profileState, action);
+    this._state.dialogsState = dialogsReducer(this._state.dialogsState, action);
 
-      this._state.profileState.postsData.push(newPost);
-      this._state.profileState.newPostText = '';
-      this._callSubscriber(this._state);
-
-    } else if (action.type === 'UPDATE_NEW_POST_TEXT') {
-
-      this._state.profileState.newPostText = action.newValue;
-      this._callSubscriber(this._state);
-
-    } else if (action.type === 'ADD_NEW_MESSAGE') {
-      let newMessage = {
-        class: 'message-list__avatar--my',
-        text: this._state.dialogsState.newMessageText,
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
-      };
-
-      this._state.dialogsState.messagesData.push(newMessage);
-      this._state.dialogsState.newMessageText = '';
-      this._callSubscriber(this._state);
-
-    } else if (action.type === 'UPDATE_NEW_MESSAGE_TEXT') {
-      this._state.dialogsState.newMessageText = action.newValue;
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state);
   }
 
 };
