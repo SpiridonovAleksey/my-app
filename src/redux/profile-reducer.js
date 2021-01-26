@@ -16,10 +16,19 @@ const profileReducer = (state, action) => {
     case UPDATE_NEW_POST_TEXT:
       state.newPostText = action.newValue;
       return state;
-      
+
     default:
       return state;
   }
+};
+
+export const addPostActionCreator = () => {
+  return {type: ADD_NEW_POST};
+};
+
+export const onPostChangeActionCreator = (newText) => {
+  return {type: UPDATE_NEW_POST_TEXT,
+    newValue: newText};
 };
 
 export default profileReducer;
