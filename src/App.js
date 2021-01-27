@@ -5,7 +5,7 @@ import Header from "./components/header/Header.jsx";
 import Navigation from "./components/nav/nav.jsx";
 import MainContent from "./components/main-content/main-content.jsx";
 import {BrowserRouter} from "react-router-dom";
-import store, {updateNewPostText} from "./redux/state";
+import store, {updateNewPostText} from "./redux/store";
 
 const App = (props) => {
 

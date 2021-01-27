@@ -8,7 +8,7 @@ import Dialogs from "../Dialogs/Dialogs.jsx";
 import Music from "../Music/Music.jsx";
 import News from "../News/News";
 import {Route} from "react-router-dom";
-import store, {updateNewPostText} from "../../redux/state";
+import store, {updateNewPostText} from "../../redux/store";
 
 const MainContent = (props) => {
 
