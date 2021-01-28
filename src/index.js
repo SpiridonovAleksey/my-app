@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/store';
-// import {addNewPost} from "./redux/store.js";
-// import {addNewMessage} from "./redux/store.js";
-// import {updateNewMessageText} from "./redux/store.js";
-// import {updateNewPostText} from "./redux/store.js"
-// import {subscribe} from "./redux/state";
+import store from './redux/redux-store';
 
 export let renderEntireTree = (state) => {
   ReactDOM.render(
@@ -22,7 +17,10 @@ export let renderEntireTree = (state) => {
 };
 
 renderEntireTree(store.getState());
-store.subscribe(renderEntireTree);
+store.subscribe(() => {
+  let state = store.getState();
+  renderEntireTree(state);
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
