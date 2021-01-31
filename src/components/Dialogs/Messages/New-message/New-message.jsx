@@ -5,13 +5,15 @@ import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../
 const NewMessage = (props) => {
   let newMessageText = React.createRef();
 
-  let sendMessage = () => {
-    props.dispatch(addMessageActionCreator());
+  let onSendMessage = () => {
+    // props.dispatch(addMessageActionCreator());
+    props.sendMessage();
   };
 
   let onMessageChange = () => {
     let newText = newMessageText.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(newText));
+    // props.dispatch(updateNewMessageTextActionCreator(newText));
+    props.messageChange(newText);
   };
 
   return (
@@ -26,7 +28,7 @@ const NewMessage = (props) => {
                 onChange={onMessageChange}
                 value={props.newMessageText}/>
       <div className='new-message__control'>
-        <button className='new-message__button' onClick={sendMessage}>send</button>
+        <button className='new-message__button' onClick={onSendMessage}>send</button>
       </div>
     </div>
   );

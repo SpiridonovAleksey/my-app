@@ -17,9 +17,11 @@ const MainContent = (props) => {
       <Route path='/profile' render={() => <Profile postsData={props.postsData}
                                                     friendsData={props.friendsData}
                                                     newPostText={props.newPostText}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    dispatch={props.dispatch}
+                                                    store={props.store}/>}/>
       <Route path='/dialogs' render={() => <Dialogs dialogsState={props.dialogsState}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    dispatch={props.dispatch}
+                                                    store={props.store}/>}/>
       <Route path='/music' render={() => <Music/>}/>
       <Route path='/news' render={() => <News/>}/>
     </div>

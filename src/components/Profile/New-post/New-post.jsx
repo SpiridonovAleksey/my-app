@@ -5,13 +5,15 @@ import {addPostActionCreator, onPostChangeActionCreator} from "../../../redux/pr
 const NewPost = (props) => {
   let someNewPostText = React.createRef();
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    // props.dispatch(addPostActionCreator());
+    props.addPost();
   };
 
   let onPostChange = () => {
     let newText = someNewPostText.current.value;
-    props.dispatch(onPostChangeActionCreator(newText));
+    // props.dispatch(onPostChangeActionCreator(newText));
+    props.postChange(newText);
   };
 
 
@@ -25,7 +27,7 @@ const NewPost = (props) => {
                 ref={someNewPostText}
                 onChange={onPostChange}
                 value={props.newPostText}/>
-      <button className="new-post__button" onClick={addPost}>add</button>
+      <button className="new-post__button" onClick={onAddPost}>add</button>
     </section>
   )
 };

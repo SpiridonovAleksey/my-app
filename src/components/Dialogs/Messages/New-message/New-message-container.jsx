@@ -1,35 +1,25 @@
 import React from "react";
-import './New-message.css';
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../../redux/dialogs-reducer";
+import NewMessage from "./New-message";
 
-const NewMessage = (props) => {
-  let newMessageText = React.createRef();
+const NewMessageContainer = (props) => {
+  // let newMessageText = React.createRef();
+  let state = props.store.getState().dialogsState;
 
   let sendMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    props.store.dispatch(addMessageActionCreator());
   };
 
-  let onMessageChange = () => {
-    let newText = newMessageText.current.value;
-    props.dispatch(updateNewMessageTextActionCreator(newText));
+  let messageChange = (newText) => {
+    // let newText = newMessageText.current.value;
+    props.store.dispatch(updateNewMessageTextActionCreator(newText));
   };
 
   return (
-    <div className='new-message'>
-      <textarea className='new-message__text'
-                name=""
-                id=""
-                cols=""
-                rows=""
-                placeholder='Введите сообщение'
-                ref={newMessageText}
-                onChange={onMessageChange}
-                value={props.newMessageText}/>
-      <div className='new-message__control'>
-        <button className='new-message__button' onClick={sendMessage}>send</button>
-      </div>
-    </div>
+    <NewMessage sendMessage={sendMessage}
+                messageChange={messageChange}
+                newMessageText={state.newMessageText}/>
   );
 };
 
-export default NewMessage;
+export default NewMessageContainer;

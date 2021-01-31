@@ -18,6 +18,7 @@ const App = (props) => {
                      postsData={props.state.profileState.postsData}
                      friendsData={props.state.profileState.friendsData}
                      dispatch={props.dispatch}
+                     store={props.store}
         />
         <Footer/>
       </div>
