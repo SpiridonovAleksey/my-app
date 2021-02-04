@@ -11,7 +11,7 @@ const MessageList = (props) => {
 
           let state = store.getState().dialogsState.messagesData;
 
-          let messageItem = store.map(item =>
+          let messageItem = state.map(item =>
             <li className='message-list__item'>
               <img className={item.class}
                    src={item.url}
