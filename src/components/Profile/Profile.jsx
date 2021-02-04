@@ -11,14 +11,19 @@ const Profile = (props) => {
   return (
     <section className='profile'>
       <UserGeneralWrap/>
-      <Sidebar friendsData={props.friendsData}/>
+      <Sidebar
+        // friendsData={props.friendsData}
+      />
       <NewPostContainer
-        // newPostText={props.newPostText}
+                // newPostText={props.newPostText}
                 // addNewPost={props.addNewPost}
                 // updateNewPostText={props.updateNewPostText}
                 // dispatch={props.dispatch}
-                store={props.store}/>
-      <PostsWrap postsData={props.postsData}/>
+                // store={props.store}
+      />
+      <PostsWrap
+        // postsData={props.postsData}
+      />
     </section>
   );
 };

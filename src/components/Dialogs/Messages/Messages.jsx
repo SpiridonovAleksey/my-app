@@ -8,12 +8,15 @@ const Messages = (props) => {
 
   return (
     <div className='messages'>
-      <MessageList messagesData={props.messagesData}/>
+      <MessageList
+        // messagesData={props.messagesData}
+      />
       <NewMessageContainer
-        // addNewMessage={props.addNewMessage}
+        //           addNewMessage={props.addNewMessage}
         //           newMessageText={props.newMessageText}
         //           dispatch={props.dispatch}
-                  store={props.store}/>
+        //           store={props.store}
+      />
     </div>
   );
 };

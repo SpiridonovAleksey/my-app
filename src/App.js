@@ -13,12 +13,13 @@ const App = (props) => {
       <div className='app-wrapper'>
         <Header/>
         <Navigation/>
-        <MainContent dialogsState={props.state.dialogsState}
-                     newPostText={props.state.profileState.newPostText}
-                     postsData={props.state.profileState.postsData}
-                     friendsData={props.state.profileState.friendsData}
-                     dispatch={props.dispatch}
-                     store={props.store}
+        <MainContent
+          //            dialogsState={props.state.dialogsState}
+          //            newPostText={props.state.profileState.newPostText}
+          //            postsData={props.state.profileState.postsData}
+          //            friendsData={props.state.profileState.friendsData}
+          //            dispatch={props.dispatch}
+          //            store={props.store}
         />
         <Footer/>
       </div>
