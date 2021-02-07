@@ -10,7 +10,7 @@ export let renderEntireTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <StoreContext.Provider value={store}>
-      <App 
+      <App
         // state={state}
         //    dispatch={store.dispatch.bind(store)}
         //    store={store}
@@ -21,10 +21,9 @@ export let renderEntireTree = (state) => {
   );
 };
 
-renderEntireTree(store.getState());
+renderEntireTree();
 store.subscribe(() => {
-  let state = store.getState();
-  renderEntireTree(state);
+  renderEntireTree();
 });
 
 // If you want your app to work offline and load faster, you can change
