@@ -4,12 +4,12 @@ import StoreContext from "../../../../StoreContext";
 
 const MessageList = (props) => {
 
-  return (
-    <StoreContext.Consumer>
-      {
-        (store) => {
+  // return (
+  //   <StoreContext.Consumer>
+  //     {
+  //       (store) => {
 
-          let state = store.getState().dialogsState.messagesData;
+          let state = props.messagesData;
 
           let messageItem = state.map(item =>
             <li className='message-list__item'>
@@ -25,10 +25,10 @@ const MessageList = (props) => {
               {messageItem}
             </ul>
           )
-        }
-      }
-    </StoreContext.Consumer>
-  );
+        // };
+  //     }
+  //   </StoreContext.Consumer>
+  // );
 };
 export default MessageList;
 

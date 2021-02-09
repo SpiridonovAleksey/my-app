@@ -6,12 +6,12 @@ import StoreContext from "../../../StoreContext";
 const DialogList = (props) => {
 
 
-  return (
-    <StoreContext.Consumer>
-      {
-        (store) => {
+  // return (
+  //   <StoreContext.Consumer>
+  //     {
+  //       (store) => {
 
-          let state = store.getState().dialogsState.dialogsData;
+          let state = props.dialogsData;
 
           let dialogsItem = state.map(item =>
             <li className='dialog-list__item'>
@@ -25,11 +25,11 @@ const DialogList = (props) => {
               {dialogsItem}
             </ul>
           )
-        }
+        // }
+    //
+    //   }
+    // </StoreContext.Consumer>
 
-      }
-    </StoreContext.Consumer>
-
-  );
+  // );
 };
 export default DialogList;

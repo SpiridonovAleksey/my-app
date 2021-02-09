@@ -1,16 +1,19 @@
 import React from "react";
 import './friends.css'
 import StoreContext from "../../../../StoreContext";
+import {connect} from "react-redux";
 
 const Friends = (props) => {
 
 
-  return (
-    <StoreContext.Consumer>
-      {
-        (store) => {
+  // return (
+  //   <StoreContext.Consumer>
+  //     {
+  //       (store) => {
 
-          let state = store.getState().profileState.friendsData;
+          // let state = store.getState().profileState.friendsData;
+
+  let state = props.friendsData;
 
           let friendsItem = state.map(item =>
             <li className="friends-list__item">
@@ -29,10 +32,18 @@ const Friends = (props) => {
               </ul>
             </div>
           )
-        }
-      }
-    </StoreContext.Consumer>
-  )
-};
+        };
+      // }
+    // </StoreContext.Consumer>
+  // )
+// };
 
+// function mapStateToProps(state) {
+//   return {
+//      friendsData: state.profileState.friendsData
+//   }
+// }
+//
+// const FriendsContainer = connect(mapStateToProps)();
+//
 export default Friends;

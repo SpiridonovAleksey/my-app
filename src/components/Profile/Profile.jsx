@@ -6,6 +6,7 @@ import UserGeneralWrap from "./User-general-wrap/User-general-wrap.jsx";
 import Sidebar from "./sidebar/sidebar.jsx";
 import store, {updateNewPostText} from "../../redux/store";
 import NewPostContainer from "./New-post/New-post-container";
+import PostsContainer from "./Posts-wrap/Posts-wrap";
 
 const Profile = (props) => {
   return (
@@ -21,7 +22,7 @@ const Profile = (props) => {
                 // dispatch={props.dispatch}
                 // store={props.store}
       />
-      <PostsWrap
+      <PostsContainer
         // postsData={props.postsData}
       />
     </section>
