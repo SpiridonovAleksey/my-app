@@ -7,7 +7,7 @@ import store from './redux/redux-store';
 import StoreContext from "./StoreContext";
 import {Provider} from "react-redux";
 
-export let renderEntireTree = (state) => {
+// export let renderEntireTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
@@ -20,12 +20,12 @@ export let renderEntireTree = (state) => {
     </React.StrictMode>,
     document.getElementById('root')
   );
-};
-
-renderEntireTree();
-store.subscribe(() => {
-  renderEntireTree();
-});
+// };
+//
+// renderEntireTree();
+// store.subscribe(() => {
+//   renderEntireTree();
+// });
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

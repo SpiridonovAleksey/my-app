@@ -3,40 +3,70 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
 let initialState = {
   friendsData: [
-    {name: 'boris', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'},
-    {name: 'vadim', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU'},
-    {name: 'alina', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU'},
-    {name: 'lena', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU'},
-    {name: 'tolik', url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjV5mgzlLBAls49xJ01gEyH7O-THex1PqKw&usqp=CAU'}
+    {
+      name: 'boris',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'
+    },
+    {
+      name: 'vadim',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU'
+    },
+    {
+      name: 'alina',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU'
+    },
+    {
+      name: 'lena',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU'
+    },
+    {
+      name: 'tolik',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjV5mgzlLBAls49xJ01gEyH7O-THex1PqKw&usqp=CAU'
+    }
   ],
   postsData: [
-    {text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
-      count: 11},
-    {text: 'sdfsdfdsfsdf',
-      count: 32},
-    {text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
-      count: 32},
-    {text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
-      count: 44}
+    {
+      text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
+      count: 11
+    },
+    {
+      text: 'sdfsdfdsfsdf',
+      count: 32
+    },
+    {
+      text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
+      count: 32
+    },
+    {
+      text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
+      count: 44
+    }
   ],
   newPostText: ''
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_NEW_POST:
+    case ADD_NEW_POST: {
       let newPost = {
         text: state.newPostText,
         count: 99
       };
 
-      state.postsData.push(newPost);
-      state.newPostText = '';
-      return state;
+      let stateCopy = {...state};
 
-    case UPDATE_NEW_POST_TEXT:
-      state.newPostText = action.newValue;
-      return state;
+      stateCopy.postsData = [...state.postsData];
+      stateCopy.postsData.push(newPost);
+      stateCopy.newPostText = '';
+      return stateCopy;
+    }
+
+    case UPDATE_NEW_POST_TEXT: {
+      let stateCopy = {...state};
+
+      stateCopy.newPostText = action.newValue;
+      return stateCopy;
+    }
 
     default:
       return state;
@@ -48,8 +78,10 @@ export const addPostActionCreator = () => {
 };
 
 export const onPostChangeActionCreator = (newText) => {
-  return {type: UPDATE_NEW_POST_TEXT,
-    newValue: newText};
+  return {
+    type: UPDATE_NEW_POST_TEXT,
+    newValue: newText
+  };
 };
 
 export default profileReducer;

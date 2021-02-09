@@ -31,21 +31,27 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_NEW_MESSAGE:
+    case ADD_NEW_MESSAGE: {
       let newMessage = {
         class: 'message-list__avatar--my',
         text: state.newMessageText,
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
       };
 
-      state.messagesData.push(newMessage);
-      state.newMessageText = '';
-      return state;
+      let stateCopy = {...state};
 
-    case UPDATE_NEW_MESSAGE_TEXT:
-      state.newMessageText = action.newValue;
-      return state;
+      stateCopy.messagesData = [...state.messagesData]
+      stateCopy.messagesData.push(newMessage);
+      stateCopy.newMessageText = '';
+      return stateCopy;
+    }
+    case UPDATE_NEW_MESSAGE_TEXT: {
 
+      let stateCopy = {...state};
+
+      stateCopy.newMessageText = action.newValue;
+      return stateCopy;
+    }
     default:
       return state;
   }

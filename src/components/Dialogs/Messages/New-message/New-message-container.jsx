@@ -35,7 +35,7 @@ import {connect} from "react-redux";
 
 let MapStateToProps = (state) => {
   return {
-    newMessageText: state.newMessageText
+    newMessageText: state.dialogsState.newMessageText
   }
 };
 
