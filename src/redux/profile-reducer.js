@@ -53,15 +53,6 @@ const profileReducer = (state = initialState, action) => {
         count: 99
       };
 
-      // let stateCopy = {
-      //   ...state,
-      //   postsData: [...state.postsData, newPost],
-      //   newPostText: ''
-      // };
-
-      // stateCopy.postsData = [...state.postsData];
-      // stateCopy.postsData.push(newPost);
-      // stateCopy.newPostText = '';
       return {
         ...state,
         postsData: [...state.postsData, newPost],
@@ -70,12 +61,7 @@ const profileReducer = (state = initialState, action) => {
     }
 
     case UPDATE_NEW_POST_TEXT: {
-      // let stateCopy = {
-      //   ...state,
-      //   newPostText: action.newValue
-      // };
 
-      // stateCopy.newPostText = action.newValue;
       return {
         ...state,
         newPostText: action.newValue

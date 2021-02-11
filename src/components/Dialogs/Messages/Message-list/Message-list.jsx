@@ -1,34 +1,24 @@
 import React from "react";
 import './Message-list.css'
-import StoreContext from "../../../../StoreContext";
 
 const MessageList = (props) => {
 
-  // return (
-  //   <StoreContext.Consumer>
-  //     {
-  //       (store) => {
+  let state = props.messagesData;
 
-          let state = props.messagesData;
+  let messageItem = state.map(item =>
+    <li className='message-list__item'>
+      <img className={item.class}
+           src={item.url}
+           alt=""/>
+      <p className='message-list__text'>{item.text}</p>
+    </li>
+  );
 
-          let messageItem = state.map(item =>
-            <li className='message-list__item'>
-              <img className={item.class}
-                   src={item.url}
-                   alt=""/>
-              <p className='message-list__text'>{item.text}</p>
-            </li>
-          );
-
-          return (
-            <ul className='message-list'>
-              {messageItem}
-            </ul>
-          )
-        // };
-  //     }
-  //   </StoreContext.Consumer>
-  // );
+  return (
+    <ul className='message-list'>
+      {messageItem}
+    </ul>
+  )
 };
 export default MessageList;
 

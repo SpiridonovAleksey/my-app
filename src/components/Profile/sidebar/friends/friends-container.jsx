@@ -1,6 +1,5 @@
 import React from "react";
 import './friends.css'
-import StoreContext from "../../../../StoreContext";
 import {connect} from "react-redux";
 import Friends from "./friends";
 
