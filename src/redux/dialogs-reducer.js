@@ -38,19 +38,33 @@ const dialogsReducer = (state = initialState, action) => {
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcL8sho8QEvvpuexofi0rdjTv-5DBpFYH0_A&usqp=CAU'
       };
 
-      let stateCopy = {...state};
+      // let stateCopy = {
+      //   ...state,
+      //   messagesData: [...state.messagesData, newMessage],
+      //   newMessageText: ''
+      // };
 
-      stateCopy.messagesData = [...state.messagesData]
-      stateCopy.messagesData.push(newMessage);
-      stateCopy.newMessageText = '';
-      return stateCopy;
+      // stateCopy.messagesData = [...state.messagesData]
+      //       // stateCopy.messagesData.push(newMessage);
+      // stateCopy.newMessageText = '';
+      return {
+        ...state,
+        messagesData: [...state.messagesData, newMessage],
+        newMessageText: ''
+      };
     }
     case UPDATE_NEW_MESSAGE_TEXT: {
 
-      let stateCopy = {...state};
+      // let stateCopy = {
+      //   ...state,
+      //   newMessageText: action.newValue
+      // };
 
-      stateCopy.newMessageText = action.newValue;
-      return stateCopy;
+      // stateCopy.newMessageText = action.newValue;
+      return {
+        ...state,
+        newMessageText: action.newValue
+      };
     }
     default:
       return state;
