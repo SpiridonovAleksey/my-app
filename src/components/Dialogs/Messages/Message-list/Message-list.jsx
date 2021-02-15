@@ -6,7 +6,7 @@ const MessageList = (props) => {
   let state = props.messagesData;
 
   let messageItem = state.map(item =>
-    <li className='message-list__item'>
+    <li className='message-list__item' key={item.id}>
       <img className={item.class}
            src={item.url}
            alt=""/>

@@ -6,7 +6,7 @@ const Friends = (props) => {
   let state = props.friendsData;
 
   let friendsItem = state.map(item =>
-    <li className="friends-list__item">
+    <li className="friends-list__item" key={item.id}>
       <img className="friends-list__img"
            src={item.url}
            alt=""/>

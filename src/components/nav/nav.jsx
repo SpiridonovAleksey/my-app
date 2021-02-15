@@ -7,19 +7,22 @@ const Navigation = () => {
     <nav className='main-nav'>
       <ul className='main-nav__list'>
         <li className='main-nav__list-item'>
-          <NavLink className='main-nav__list-link' to="/profile">Profile</NavLink>
+          <NavLink className='main-nav__list-link' to="/profile">Моя страница</NavLink>
         </li>
         <li className='main-nav__list-item'>
-          <NavLink className='main-nav__list-link' to="/dialogs">Messages</NavLink>
+          <NavLink className='main-nav__list-link' to="/users">Пользователи</NavLink>
         </li>
         <li className='main-nav__list-item'>
-          <NavLink className='main-nav__list-link' to="/news">News</NavLink>
+          <NavLink className='main-nav__list-link' to="/dialogs">Сообщения</NavLink>
         </li>
         <li className='main-nav__list-item'>
-          <NavLink className='main-nav__list-link' to="/music">Music</NavLink>
+          <NavLink className='main-nav__list-link' to="/news">Новости</NavLink>
         </li>
         <li className='main-nav__list-item'>
-          <NavLink className='main-nav__list-link' to="">Settings</NavLink>
+          <NavLink className='main-nav__list-link' to="/music">Музыка</NavLink>
+        </li>
+        <li className='main-nav__list-item'>
+          <NavLink className='main-nav__list-link' to="">Настройки</NavLink>
         </li>
       </ul>
     </nav>

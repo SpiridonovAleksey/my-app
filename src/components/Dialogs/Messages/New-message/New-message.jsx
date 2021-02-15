@@ -26,7 +26,7 @@ const NewMessage = (props) => {
                 value={props.newMessageText}/>
       <div className='new-message__control'>
         <button className='new-message__button'
-                onClick={onSendMessage}>send
+                onClick={onSendMessage}>отправить
         </button>
       </div>
     </div>

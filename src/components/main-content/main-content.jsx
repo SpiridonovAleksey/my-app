@@ -5,6 +5,7 @@ import Dialogs from "../Dialogs/Dialogs.jsx";
 import Music from "../Music/Music.jsx";
 import News from "../News/News";
 import {Route} from "react-router-dom";
+import Users from "../users/users";
 
 const MainContent = (props) => {
 
@@ -12,6 +13,8 @@ const MainContent = (props) => {
     <div className='main-content'>
       <Route path='/profile'
              render={() => <Profile/>}/>
+      <Route path='/users'
+             render={() => <Users/>}/>
       <Route path='/dialogs'
              render={() => <Dialogs/>}/>
       <Route path='/music'

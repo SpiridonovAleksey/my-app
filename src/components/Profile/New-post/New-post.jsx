@@ -19,13 +19,13 @@ const NewPost = (props) => {
       <img className="new-post__avatar"
            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE4Jz3awyArUnyFZaY0yo3zW09SjnZIH7G-g&usqp=CAU"
            alt=""/>
-      <p className="new-post__title">add new post</p>
+      <p className="new-post__title">добавить пост</p>
       <textarea className="new-post__message"
                 ref={someNewPostText}
                 onChange={onPostChange}
                 value={props.newPostText}/>
       <button className="new-post__button"
-              onClick={onAddPost}>add
+              onClick={onAddPost}>добавить
       </button>
     </section>
   )

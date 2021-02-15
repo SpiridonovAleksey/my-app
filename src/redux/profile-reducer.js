@@ -4,40 +4,49 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 let initialState = {
   friendsData: [
     {
+      id: 1,
       name: 'boris',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTip_VRWHVZ9Hs-duJcIjB6SxFk5q-QGNitnw&usqp=CAU'
     },
     {
+      id: 2,
       name: 'vadim',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU'
     },
     {
+      id: 3,
       name: 'alina',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU'
     },
     {
+      id: 4,
       name: 'lena',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU'
     },
     {
+      id: 5,
       name: 'tolik',
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjV5mgzlLBAls49xJ01gEyH7O-THex1PqKw&usqp=CAU'
     }
   ],
   postsData: [
     {
+      id: 1,
       text: 'материал содержит обзор всей темы с опорными таблицами, красивыми',
       count: 11
     },
     {
+      id: 2,
       text: 'sdfsdfdsfsdf',
       count: 32
     },
     {
+      id: 3,
       text: 'sdfsdfdsfsdfшпаргалка поможет вам повторить всю',
       count: 32
     },
     {
+      id: 4,
       text: 'шпаргалка поможет вам повторить всю английскую грамматику по учебнику Essential',
       count: 44
     }
