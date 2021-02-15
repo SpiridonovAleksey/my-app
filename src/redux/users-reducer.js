@@ -8,11 +8,11 @@ let initialState = {
     {
       userId: 1,
       fullName: 'Sveta Ten',
-      status: 'omg',
+      status: 'OMG',
       avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU',
       location: {
         country: 'USA',
-        city: 'Boston'
+        city: 'LA'
       },
       followed: true
     },
@@ -29,12 +29,12 @@ let initialState = {
     },
     {
       userId: 3,
-      fullName: 'Jo Tribiani',
-      status: 'dfdf',
-      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSasANDDeWubBzgKEnbIPpI7X7t-lsyFFgvNA&usqp=CAU',
+      fullName: 'Joseph Francis Tribbiani',
+      status: 'an actor',
+      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74it60KT6BQjGE0KH0TFnGghqe24idV4qnA&usqp=CAU',
       location: {
         country: 'USA',
-        city: 'Boston'
+        city: 'NY'
       },
       followed: true
     }

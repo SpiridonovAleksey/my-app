@@ -1,5 +1,6 @@
 
 .dialogs {
   display: grid;
+  grid-gap: 15px;
   grid-template-columns: 2fr 8fr;
 }
