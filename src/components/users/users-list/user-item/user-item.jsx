@@ -15,8 +15,11 @@ const UserItem = (props) => {
               <p>{user.location.city}</p>
             </div>
             <p className='users-list__status'>{user.status}</p>
+            {
+              user.followed ? <button className='users-list__button' onClick={()=> {props.unfollow(user.userId)}}>unfollow</button>
+                            : <button className='users-list__button' onClick={()=> {props.follow(user.userId)}}>follow</button>
+            }
 
-            <button className='users-list__button'>button</button>
           </li>
         );
       })

@@ -6,7 +6,7 @@ import {setUsersActionCreator} from "../../../../redux/users-reducer";
 
 let MapStateToProps = (state) => {
   return {
-    users: state.usersState.state.users
+    users: state.usersState.users
 
   }
 };

@@ -4,6 +4,7 @@ import NewMessage from "./New-message";
 import {connect} from "react-redux";
 
 let MapStateToProps = (state) => {
+  console.log(state)
   return {
     newMessageText: state.dialogsState.newMessageText
   }
