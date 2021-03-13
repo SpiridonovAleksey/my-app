@@ -1,43 +1,11 @@
 // const TOGGLE_FOLLOWED = 'TOGGLE_FOLLOWED';
 const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
+const UN_FOLLOW = 'UN_FOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
   users: [
-    {
-      userId: 1,
-      fullName: 'Sveta Ten',
-      status: 'OMG',
-      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQje9S6SNadtFb-a9IGUkQE4HNcPgH8-uPomg&usqp=CAU',
-      location: {
-        country: 'USA',
-        city: 'LA'
-      },
-      followed: false
-    },
-    {
-      userId: 2,
-      fullName: 'Marina May',
-      status: 'I like football',
-      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfwKKvCnC0Vd08mCdVSNUOgmPOQbzSceKQQ&usqp=CAU',
-      location: {
-        country: 'USA',
-        city: 'Boston'
-      },
-      followed: true
-    },
-    {
-      userId: 3,
-      fullName: 'Joseph Francis Tribbiani',
-      status: 'an actor',
-      avatarUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74it60KT6BQjGE0KH0TFnGghqe24idV4qnA&usqp=CAU',
-      location: {
-        country: 'USA',
-        city: 'NY'
-      },
-      followed: true
-    }
+
   ]
 };
 
@@ -54,7 +22,7 @@ const usersReducer = (state = initialState, action) => {
         })
       };
 
-    case UNFOLLOW:
+    case UN_FOLLOW:
       return {
         ...state,
         users: state.users.map(user => {
@@ -77,7 +45,7 @@ const usersReducer = (state = initialState, action) => {
 };
 
 export const followActionCreator = (userId) => ({type: FOLLOW, userId});
-export const unfollowActionCreator = (userId) => ({type: UNFOLLOW, userId});
+export const unFollowActionCreator = (userId) => ({type: UN_FOLLOW, userId});
 export const setUsersActionCreator = (users) => ({type: SET_USERS, users});
 
 export default usersReducer;
