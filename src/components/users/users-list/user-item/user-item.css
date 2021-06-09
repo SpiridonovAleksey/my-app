@@ -38,5 +38,16 @@
   border: none;
   color: #486F96;
   background-color: #E5EBF1;
+}
 
+.pagination-button {
+  border-radius: 50%;
+  border: 1px solid #D3D9DE;
+  background-color: #fff;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: #95BBDF;
 }
