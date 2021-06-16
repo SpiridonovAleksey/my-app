@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import UserItem from "./user-item";
+import UsersAPIComponent from "./users-API-component";
 import {followActionCreator, unFollowActionCreator} from '../../../../redux/users-reducer.js'
 import {setCurrentPageActionCreator, setUsersActionCreator, setTotalUsersCountActionCreator} from "../../../../redux/users-reducer";
 
@@ -33,5 +33,5 @@ let MapDispatchToProps = (dispatch) => {
   }
 };
 
-const UserItemContainer = connect(MapStateToProps, MapDispatchToProps)(UserItem);
+const UserItemContainer = connect(MapStateToProps, MapDispatchToProps)(UsersAPIComponent);
 export default UserItemContainer;
