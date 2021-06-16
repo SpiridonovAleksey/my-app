@@ -1,6 +1,7 @@
 import React from "react";
 import './user-item.css'
 import userPhoto from '../../../../assets/images/avatar-default.webp'
+import Preloader from "../../../common/Preloader/preloader.jsx";
 
 const UserItem = (props) => {
 
@@ -10,6 +11,7 @@ const UserItem = (props) => {
   for (let i = 1; i <= pageCount; i++) {
     pages.push(i);
   }
+
   return (
     <div>
       <div>
