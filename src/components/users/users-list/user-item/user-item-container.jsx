@@ -1,11 +1,11 @@
 import React from "react";
 import {connect} from "react-redux";
 // import UsersAPIComponent from "./users-API-component";
-import {followActionCreator, unFollowActionCreator} from '../../../../redux/users-reducer.js'
+import {follow, unFollow} from '../../../../redux/users-reducer.js'
 import {
-  setCurrentPageActionCreator,
-  setUsersActionCreator,
-  setTotalUsersCountActionCreator, toggleIsFetchingActionCreator
+  setCurrentPage,
+  setUsers,
+  setTotalUsersCount, toggleIsFetching
 } from "../../../../redux/users-reducer";
 
 import * as axios from "axios";
@@ -35,7 +35,7 @@ class UsersAPIComponent extends React.Component {
   render() {
 
     return (<>
-        { this.props.isFetching ? <Preloader /> : null }
+        {this.props.isFetching ? <Preloader/> : null}
         <UserItem totalUsersCount={this.props.totalUsersCount}
                   pageSize={this.props.pageSize}
                   currentPage={this.props.currentPage}
@@ -59,28 +59,13 @@ let MapStateToProps = (state) => {
   }
 };
 
-let MapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followActionCreator(userId));
-    },
-    unFollow: (userId) => {
-      dispatch(unFollowActionCreator(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsersActionCreator(users));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageActionCreator(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountActionCreator(totalCount))
-    },
-    toggleIsFetching: (isFetching) => {
-      dispatch(toggleIsFetchingActionCreator(isFetching))
-    }
-  }
-};
-
-const UserItemContainer = connect(MapStateToProps, MapDispatchToProps)(UsersAPIComponent);
+const UserItemContainer = connect(MapStateToProps, {
+  //ActionCreators
+  follow,
+  unFollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toggleIsFetching
+  })(UsersAPIComponent);
 export default UserItemContainer;
