@@ -6,13 +6,14 @@ import Music from "../Music/Music.jsx";
 import News from "../News/News";
 import {Route} from "react-router-dom";
 import Users from "../users/users";
+import ProfileAPIContainer from "../Profile/Profile-container";
 
 const MainContent = (props) => {
 
   return (
     <div className='main-content'>
       <Route path='/profile'
-             render={() => <Profile/>}/>
+             render={() => <ProfileAPIContainer/>}/>
       <Route path='/users'
              render={() => <Users/>}/>
       <Route path='/dialogs'

@@ -1,10 +1,10 @@
 import React from "react";
 import "./General-avatar.css"
 
-const GeneralAvatar = () => {
+const GeneralAvatar = (props) => {
   return (
     <div className="avatar-wrap">
-      <img className="avatar__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE4Jz3awyArUnyFZaY0yo3zW09SjnZIH7G-g&usqp=CAU"
+      <img className="avatar__img" src={props.photo}
            alt="Avatar"/>
       <button className="avatar__button">изменить</button>
     </div>

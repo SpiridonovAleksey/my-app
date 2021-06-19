@@ -1,7 +1,7 @@
 import React from "react";
 import './user-item.css'
 import userPhoto from '../../../../assets/images/avatar-default.webp'
-import Preloader from "../../../common/Preloader/preloader.jsx";
+import {NavLink} from "react-router-dom";
 
 const UserItem = (props) => {
 
@@ -30,9 +30,11 @@ const UserItem = (props) => {
           return (
             <div key={user.id}
                  className='users-list__item'>
-              <img src={user.photos.small != null ? user.photos.small : userPhoto}
-                   alt=""
-                   className='users-list__avatar'/>
+              <NavLink to={'/profile/' + user.id}>
+                <img src={user.photos.small != null ? user.photos.small : userPhoto}
+                     alt=""
+                     className='users-list__avatar'/>
+              </NavLink>
               <p className='users-list__name'>{user.name}</p>
               <div className='users-list__location'>
                 <p>{'user.location.country'}</p>

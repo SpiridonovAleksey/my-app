@@ -8,7 +8,7 @@ import PostsContainer from "./Posts-wrap/Posts-wrap";
 const Profile = (props) => {
   return (
     <section className='profile'>
-      <UserGeneralWrap/>
+      <UserGeneralWrap profile={props.profile}/>
       <Sidebar/>
       <NewPostContainer/>
       <PostsContainer/>

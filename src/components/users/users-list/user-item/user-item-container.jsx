@@ -1,6 +1,5 @@
 import React from "react";
 import {connect} from "react-redux";
-// import UsersAPIComponent from "./users-API-component";
 import {follow, unFollow} from '../../../../redux/users-reducer.js'
 import {
   setCurrentPage,
