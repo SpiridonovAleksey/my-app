@@ -53,7 +53,7 @@ let initialState = {
     }
   ],
   newPostText: '',
-  profile: null
+  profile: 'wert'
 };
 
 const profileReducer = (state = initialState, action) => {
