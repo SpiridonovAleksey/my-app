@@ -53,7 +53,11 @@ let initialState = {
     }
   ],
   newPostText: '',
-  profile: 'wert'
+  profile: {
+    photos: {
+      large: ''
+    }
+  }
 };
 
 const profileReducer = (state = initialState, action) => {

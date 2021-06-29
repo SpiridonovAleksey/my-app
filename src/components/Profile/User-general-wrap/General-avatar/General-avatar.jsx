@@ -2,7 +2,7 @@ import React from "react";
 import "./General-avatar.css"
 
 const GeneralAvatar = (props) => {
-  // console.log(props.profile);
+  // debugger
   return (
     <div className="avatar-wrap">
       <img className="avatar__img" src={props.photos.large}
